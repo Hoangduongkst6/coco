@@ -1,0 +1,64 @@
+:root {
+    --primary-dark-color: #f88c90;
+    --primary-color: #ffb3b5;
+    --text-color: #232124;
+    --sub-color: #ffdebd;
+
+    --top-bar-height: 34px;
+    --logo-size: 50px;
+    --menu-padding: 6px;
+    --menu-height: calc(50px + 6px * 2);
+    --with-search-height: 84px;
+    --header-height: calc(var(--top-bar-height) + var(--menu-height) + var(--with-search-height));
+
+    --swiper-theme-color: #666 !important;
+    --swiper-navigation-size: 20px !important;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    object-fit: cover;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+input,
+textarea {
+    background: transparent;
+}
+
+a,
+img,
+button,
+input,
+label,
+textarea,
+select {
+    padding: 0;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+    border: none;
+}
