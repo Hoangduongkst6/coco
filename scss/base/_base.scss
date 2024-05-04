@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 :root {
     --primary-dark-color: #f88c90;
     --primary-color: #ffb3b5;
@@ -6,10 +8,14 @@
 
     --top-bar-height: 34px;
     --logo-size: 50px;
-    --menu-padding: 6px;
-    --menu-height: calc(50px + 6px * 2);
-    --with-search-height: 84px;
+    --menu-padding: 8px;
+    --menu-height: calc(var(--logo-size) + var(--menu-padding) * 2);
+    --with-search-height: 80px;
     --header-height: calc(var(--top-bar-height) + var(--menu-height) + var(--with-search-height));
+
+    @include abstracts.screen(lg) {
+        --header-height: var(--menu-height);
+    }
 
     --swiper-theme-color: #666 !important;
     --swiper-navigation-size: 20px !important;
@@ -26,6 +32,7 @@ html {
 }
 
 body {
+    color: #5d5f5f;
     font-size: 1.6rem;
     font-family: "Roboto", sans-serif;
 }

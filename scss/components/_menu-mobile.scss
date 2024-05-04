@@ -1,0 +1,133 @@
+@use "../abstracts";
+
+%nav-mobile-ul {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 0 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.079);
+}
+
+%nav-mobile-a {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 16px 0 16px 20px;
+    transition: 0.3s;
+    width: 100%;
+
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
+.menu-mobile {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    z-index: 999;
+    padding: 16px 0 0 32px;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+
+    @include abstracts.screen(md) {
+        width: 80%;
+        padding: 12px 0 0 12px;
+    }
+
+    &.hide {
+        translate: -100% 0;
+    }
+
+    &.show {
+        translate: 0;
+
+        ~ .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        ~ .menu-mobile-backout img {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &-backout {
+        padding-top: 12px;
+
+        img {
+            padding: 6px 4px;
+        }
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: var(--logo-size);
+        margin: 12px 0;
+
+        img {
+            border-radius: 50%;
+            width: var(--logo-size);
+            height: var(--logo-size);
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &-navbar {
+        ul {
+            flex-direction: column;
+            align-items: flex-start;
+
+            @extend %nav-mobile-ul;
+
+            li {
+                width: 100%;
+            }
+
+            a {
+                @extend %nav-mobile-a;
+            }
+        }
+    }
+
+    &-topbar {
+        ul {
+            flex-direction: column;
+            align-items: flex-start;
+
+            @extend %nav-mobile-ul;
+
+            li {
+                width: 100%;
+                padding: 0;
+
+                &.gap::before {
+                    content: none;
+                }
+            }
+
+            a {
+                @extend %nav-mobile-a;
+
+                &:hover {
+                    color: var(--primary-dark-color);
+                }
+            }
+        }
+    }
+}
