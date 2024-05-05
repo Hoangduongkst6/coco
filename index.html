@@ -21,6 +21,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -168,6 +170,12 @@
                                 <li>
                                     <a href="#!">Khung ảnh</a>
                                 </li>
+                                <li>
+                                    <a href="#!">Album</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Khung ảnh</a>
+                                </li>
                             </ul>
                         </nav>
                     </button>
@@ -205,7 +213,44 @@
     </header>
 
     <!-- Main -->
-    <main></main>
+    <main>
+        <!-- Hero -->
+        <div class="hero">
+            <div class="container">
+                <div class="hero-body">
+                    <nav class="hero-subnav"></nav>
+
+                    <div class="slider swiper">
+                        <div class="slider-list swiper-wrapper">
+                            <div class="slider-item swiper-slide">
+                                <img src="./assets/images/slider-1.png" alt="">
+                            </div>
+                            <div class="slider-item swiper-slide">
+                                <img src="./assets/images/slider-2.jpg" alt="">
+                            </div>
+                            <div class="slider-item swiper-slide">
+                                <img src="./assets/images/slider-3.jpg" alt="">
+                            </div>
+                            <div class="slider-item swiper-slide">
+                                <img src="./assets/images/slider-4.jpg" alt="">
+                            </div>
+                            <div class="slider-item swiper-slide">
+                                <img src="./assets/images/slider-5.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    </main>
 
     <!-- Footer -->
     <footer id="footer" class="footer"></footer>

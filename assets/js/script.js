@@ -45,19 +45,21 @@ function handleInputSlider() {
         "input",
         debounce(function (e) {
             const itemsProduct = $$(".products-list li");
-            const txtSlider = e.target.value.trim().toLowerCase();
-
-            common.classList.add("hide");
 
             itemsProduct.forEach((item) => {
-                // Hiện thi khi được tìm kiếm
+                const txtSlider = e.target.value.trim().toLowerCase();
+
+                // Ẩn / hiện products list
                 if (item.innerText.toLowerCase().includes(txtSlider)) {
                     item.classList.remove("hide");
                 } else {
                     item.classList.add("hide");
                 }
 
-                // Ẩn đi khi được tìm kiếm
+                // Ẩn common khi products hiện thị
+                common.classList.add("hide");
+
+                // Hiện thị common khi input là trống
                 if (e.target.value === "") {
                     item.classList.add("hide");
 
@@ -67,6 +69,7 @@ function handleInputSlider() {
         }, 300)
     );
 
+    // Ẩn / hiện products
     searchInput.onclick = function () {
         productsSilder.classList.remove("hide");
     };
@@ -76,7 +79,7 @@ function handleInputSlider() {
 }
 
 // Copy menu for navbar Mobile
-function copyMenu() {
+function copyMenuNavbar() {
     // Copy navbar
     const navbar = $(".navbar");
     const mobileNavbar = $(".menu-mobile-navbar");
@@ -90,12 +93,66 @@ function copyMenu() {
     mobileTopbar.innerHTML = copyTopbar;
 }
 
+// Copy menu hero
+function copyMenuHero() {
+    const subnav = $(".subnav");
+    const subnavHero = $(".hero-subnav");
+    subnavHero.innerHTML = subnav.innerHTML;
+
+    const width = window.outerWidth;
+    if (width < 1200) {
+        subnavHero.innerHTML = "";
+    }
+}
+
+// Handle Slider
+function handleslider() {
+    const slider = $(".slider");
+    const nextSlider = $(".swiper-button-next");
+    const prevSlider = $(".swiper-button-prev");
+
+    // Xử lý Slider
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+
+        pagination: {
+            el: ".swiper-pagination",
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // Tự động click sau 5s
+    setInterval(() => {
+        nextSlider.click();
+    }, 5000);
+
+    // Hiện thị next / prev
+    slider.onmouseover = function () {
+        nextSlider.style.display = "flex";
+        prevSlider.style.display = "flex";
+    };
+
+    // Ẩn next / prev
+    slider.onmouseout = function () {
+        nextSlider.style.display = "none";
+        prevSlider.style.display = "none";
+    };
+}
+
 function render() {
     getProducts(renderProducts);
 
     handleInputSlider();
 
-    copyMenu();
+    copyMenuNavbar();
+
+    copyMenuHero();
+
+    handleslider();
 }
 
 // Render viewpoint
