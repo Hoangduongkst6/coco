@@ -143,7 +143,7 @@ function handleslider() {
     };
 }
 
-function render() {
+function start() {
     getProducts(renderProducts);
 
     handleInputSlider();
@@ -155,5 +155,4 @@ function render() {
     handleslider();
 }
 
-// Render viewpoint
-render();
+start();

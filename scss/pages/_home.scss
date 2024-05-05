@@ -4,7 +4,6 @@
     margin-top: 32px;
     &-body {
         display: flex;
-
     }
 
     &-subnav {
@@ -26,10 +25,10 @@
     width: 100%;
     margin-left: 32px !important;
     cursor: grab;
-    
+
     @include abstracts.screen(xl) {
         margin-left: 0 !important;
-    }   
+    }
 
     &-item {
         position: relative;
@@ -55,4 +54,56 @@
     height: 45px;
     border-radius: 50%;
     background-color: #fff6;
+}
+
+.service {
+
+    &-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        padding: 32px 0;
+        gap: 16px;
+    }
+
+    &-box {
+        width: 258px;
+        flex-shrink: 0;
+
+        span {
+            color: #363636;
+        }
+
+        p {
+            font-size: 1.4rem;
+            margin-top: 6px;
+            color: #898989;
+            line-height: 22px;
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        img {
+            width: 40px;
+            margin: auto;
+            filter: brightness(0) saturate(100%) invert(35%) sepia(0%) saturate(1067%) hue-rotate(257deg)
+                brightness(102%) contrast(87%);
+        }
+    }
 }
