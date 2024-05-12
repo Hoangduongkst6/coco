@@ -158,7 +158,7 @@ function handleInputSearch() {
         productsSearch.classList.remove("hide");
     };
     searchInput.onblur = function () {
-        setTimeout(() => productsSearch.classList.add("hide"), 100)
+        setTimeout(() => productsSearch.classList.add("hide"), 200)
     };
 }
 

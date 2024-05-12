@@ -110,8 +110,9 @@
         height: var(--logo-size);
     }
 
-    span {
+    h1 {
         font-weight: 700;
+        font-size: 1.7rem;
     }
 }
 
@@ -124,7 +125,7 @@
 
         a {
             padding: 0 14px;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 500;
             transition: color 0.2s;
 
@@ -225,7 +226,6 @@
         span {
             font-size: 1.4rem;
             font-weight: 500;
-            color: #232124;
         }
 
         img {
@@ -337,8 +337,8 @@
         li {
             > a {
                 width: 100%;
-                padding: 12px 16px;
-                font-size: 1.4rem;
+                padding: 14px 16px;
+                font-size: 1.5rem;
                 display: inline-block;
 
                 @include abstracts.screen(md) {

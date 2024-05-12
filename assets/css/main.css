@@ -983,8 +983,7 @@ table {
   --primary-highlight-color: #ff8ba7;
   --primary-color: #ffb3b5;
   --heading-color: #33272a;
-  --text-color: #594a4e;
-  --sub-color: #ffdebd;
+  --text-color: #232124;
   --top-bar-height: 34px;
   --logo-size: 50px;
   --menu-padding: 8px;
@@ -1004,6 +1003,11 @@ table {
 ::before,
 ::after {
   box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--primary-highlight-color);
+  color: #fff;
 }
 
 html {
@@ -1236,8 +1240,9 @@ select {
   width: var(--logo-size);
   height: var(--logo-size);
 }
-.logo span {
+.logo h1 {
   font-weight: 700;
+  font-size: 1.7rem;
 }
 
 .navbar {
@@ -1249,7 +1254,7 @@ select {
 }
 .navbar-list a {
   padding: 0 14px;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
   transition: color 0.2s;
 }
@@ -1338,7 +1343,6 @@ select {
 .cheader-with-search-button span {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #232124;
 }
 .cheader-with-search-button img {
   width: 16px;
@@ -1439,8 +1443,8 @@ select {
 }
 .products-list li > a {
   width: 100%;
-  padding: 12px 16px;
-  font-size: 1.4rem;
+  padding: 14px 16px;
+  font-size: 1.5rem;
   display: inline-block;
 }
 @media (max-width: 767.98px) {
@@ -1702,7 +1706,7 @@ select {
   flex-shrink: 0;
 }
 .service-box span {
-  color: #363636;
+  color: #232124;
 }
 .service-box p {
   font-size: 1.4rem;
