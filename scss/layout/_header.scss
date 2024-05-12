@@ -28,6 +28,7 @@
             cursor: pointer;
             gap: 6px;
             font-size: 1.3rem;
+            transition: all .2s;
 
             &:first-child {
                 padding-left: 0;
@@ -40,7 +41,7 @@
             @extend %df-align-on;
 
             &:hover {
-                color: var(--primary-color);
+                color: var(--primary-highlight-color);
             }
 
             img {
@@ -128,7 +129,7 @@
             transition: color 0.2s;
 
             &.active {
-                color: var(--primary-dark-color);
+                color: var(--primary-highlight-color);
 
                 @include abstracts.screen(lg) {
                     background-color: #fafafa;
@@ -136,7 +137,7 @@
             }
 
             &:hover {
-                color: var(--primary-dark-color);
+                color: var(--primary-highlight-color);
             }
         }
     }
@@ -164,9 +165,9 @@
     margin-left: auto;
 
     &:hover {
-        color: var(--primary-dark-color);
-        filter: brightness(0) saturate(100%) invert(59%) sepia(23%) saturate(5587%) hue-rotate(317deg) brightness(93%)
-            contrast(100%);
+        color: var(--primary-highlight-color);
+        filter: brightness(0) saturate(100%) invert(83%) sepia(43%) saturate(3118%) hue-rotate(295deg) brightness(101%)
+            contrast(101%);
     }
 
     img {
@@ -189,7 +190,7 @@
 }
 
 .cheader-with-search {
-    background: linear-gradient(0, var(--primary-color), var(--primary-dark-color));
+    background: linear-gradient(0, var(--primary-color), var(--primary-highlight-color));
 
     &-inner {
         height: var(--with-search-height);
@@ -214,6 +215,11 @@
             cursor: pointer;
             gap: 12px;
             background-color: #ffdebd;
+            transition: all .3s;
+
+            &:hover {
+                box-shadow: 0 3px 15px -10px rgba(31, 18, 53, 0.6);
+            }
         }
 
         span {
