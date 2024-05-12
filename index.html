@@ -55,14 +55,13 @@
             </nav>
 
             <div class="menu">
-                <div class="bars d-none d-lg-block js-toggle" toggle-target="#menu-mobile-js">
+                <div class="bars d-none d-lg-block">
                     <img src="./assets/icons/header/bars.svg" alt="">
                 </div>
 
-                <div id="menu-mobile-js" class="menu-mobile d-none d-lg-block hide">
+                <div class="menu-mobile d-none d-lg-block hide">
                     <div class="menu-mobile-backout">
-                        <img class="js-toggle" toggle-target="#menu-mobile-js" src="./assets/icons/header/back.svg"
-                            alt="">
+                        <img src="./assets/icons/header/back.svg" alt="">
                     </div>
                     <div class="menu-mobile-logo">
                         <a href="/">
@@ -74,7 +73,7 @@
                     <div class="menu-mobile-topbar"></div>
                 </div>
 
-                <div class="overlay js-toggle" toggle-target="#menu-mobile-js"></div>
+                <div class="overlay hide"></div>
 
                 <div class="logo d-lg-none">
                     <a href="/">
@@ -99,39 +98,13 @@
                     </ul>
                 </nav>
                 <div class="action">
-                    <div class="search search-mobile d-none d-lg-block">
-                        <form class="search-form search-form-mobile">
-                            <input type="text" placeholder="Tìm kiếm sản phẩm">
-                            <button class="search-btn" title="Tìm kiếm">
-                                <img src="./assets/icons/header/search.svg" alt="">
-                            </button>
-                        </form>
-                        <div class="products hide">
-                            <ul class="products-list"></ul>
-                            <div class="common">
-                                <span>Từ khóa phổ biến</span>
-                                <div class="common-list">
-                                    <div class="common-item">
-                                        <a href="#!">In ảnh</a>
-                                    </div>
-                                    <div class="common-item">
-                                        <a href="#!">Album</a>
-                                    </div>
-                                    <div class="common-item">
-                                        <a href="#!">Khung ảnh</a>
-                                    </div>
-                                    <div class="common-item">
-                                        <a href="#!">In ảnh ép Plastic</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="search-mobile d-none d-lg-flex"></div>
+
                     <div class="cart">
                         <img src="./assets/icons/header/cart.svg" alt="">
                         <div class="d-md-none">
                             <span>Giỏ hàng của bạn</span>
-                            <span>(0)sản phẩm</span>
+                            <span>0 sản phẩm</span>
                         </div>
                     </div>
                 </div>
@@ -141,10 +114,12 @@
         <div class="cheader-with-search d-lg-none">
             <div class="container">
                 <div class="cheader-with-search-inner">
-                    <button class="js-toggle" toggle-target="#subnav-js">
-                        <span>Danh mục sản phẩm</span>
-                        <img src="./assets/icons/header/bars.svg" alt="">
-                        <nav class="subnav hide" id="subnav-js">
+                    <div class="cheader-with-search-button">
+                        <button>
+                            <span>Danh mục sản phẩm</span>
+                            <img src="./assets/icons/header/bars.svg" alt="">
+                        </button>
+                        <nav class="subnav hide">
                             <ul class="subnav-list">
                                 <li>
                                     <a href="#!">In ảnh tràn viền</a>
@@ -178,7 +153,7 @@
                                 </li>
                             </ul>
                         </nav>
-                    </button>
+                    </div>
                     <div class="search">
                         <form class="search-form">
                             <input type="text" placeholder="Tìm kiếm sản phẩm">
@@ -192,16 +167,16 @@
                                 <span>Từ khóa phổ biến</span>
                                 <div class="common-list">
                                     <div class="common-item">
-                                        <a href="#!">In ảnh</a>
+                                        <a href="">In ảnh</a>
                                     </div>
                                     <div class="common-item">
-                                        <a href="#!">Album</a>
+                                        <a href="">Album</a>
                                     </div>
                                     <div class="common-item">
-                                        <a href="#!">Khung ảnh</a>
+                                        <a href="">Khung ảnh</a>
                                     </div>
                                     <div class="common-item">
-                                        <a href="#!">In ảnh ép Plastic</a>
+                                        <a href="">In ảnh ép Plastic</a>
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +255,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
             <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         </div>
@@ -290,9 +265,8 @@
     <footer id="footer" class="footer"></footer>
 
     <!-- Scripts -->
-    <script src="./assets/js/common.js"></script>
     <script src="./assets/js/script.js"></script>
-    
+
 </body>
 
 </html>

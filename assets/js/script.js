@@ -1,13 +1,57 @@
-const productsApi = "http://localhost:3000/products";
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
 // Get products Api
-function getProducts(callback) {
-    fetch(productsApi)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(callback);
-}
+const products = [
+    {
+        id: 1,
+        title: "In ảnh tràn viền",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 2,
+        title: "In ảnh mini viền trắng",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 3,
+        title: "In ảnh viền trắng",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 4,
+        title: "In ảnh instagram",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 5,
+        title: "Kẹp gỗ",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 6,
+        title: "Dây thừng",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 7,
+        title: "Album",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 8,
+        title: "Khung ảnh",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+];
 
 // Render Products
 function renderProducts(products) {
@@ -16,17 +60,59 @@ function renderProducts(products) {
     const htmls = products.map((product) => {
         return `
             <li class="hide">
-                <a href="#!">${product.title}</a>
+                <a href="">${product.title}</a>
             </li>
         `;
     });
     listProduces.innerHTML = htmls.join("");
 }
 
+// Ẩn / hiển Navlist
+function toggleNavList() {
+    const button = $(".cheader-with-search-button button");
+    const subnav = $(".subnav");
+
+    const isNavlist = false;
+
+    button.onclick = function () {
+        subnav.classList.toggle("hide");
+        !isNavlist;
+    };
+}
+
+// Ẩn / hiển Menu Mobile
+function toggleMenuMobile() {
+    const bars = $(".bars");
+    const menuMobile = $(".menu-mobile");
+    const overlay = $(".overlay");
+    const backoutMenu = $(".menu-mobile-backout img");
+
+    const isMenuMobile = false;
+
+    function toggleClick() {
+        menuMobile.classList.toggle("hide");
+        overlay.classList.toggle("hide");
+        !isMenuMobile;
+    }
+
+    bars.onclick = function () {
+        toggleClick();
+    };
+
+    overlay.onclick = function () {
+        toggleClick();
+    };
+
+    backoutMenu.onclick = function () {
+        toggleClick();
+    };
+}
+
 // Handle Search
-function handleInputSlider() {
+function handleInputSearch() {
     const searchInput = $(".search-form input");
-    const productsSilder = $(".products");
+    const productsSearch = $(".products");
+    const search = $(".search");
     const common = $(".common");
 
     // user search xong mới hiện thị
@@ -45,12 +131,10 @@ function handleInputSlider() {
         "input",
         debounce(function (e) {
             const itemsProduct = $$(".products-list li");
+            const txtSearch = e.target.value.trim().toLowerCase();
 
             itemsProduct.forEach((item) => {
-                const txtSlider = e.target.value.trim().toLowerCase();
-
-                // Ẩn / hiện products list
-                if (item.innerText.toLowerCase().includes(txtSlider)) {
+                if (item.innerText.toLowerCase().includes(txtSearch)) {
                     item.classList.remove("hide");
                 } else {
                     item.classList.add("hide");
@@ -71,11 +155,22 @@ function handleInputSlider() {
 
     // Ẩn / hiện products
     searchInput.onclick = function () {
-        productsSilder.classList.remove("hide");
+        productsSearch.classList.remove("hide");
     };
     searchInput.onblur = function () {
-        productsSilder.classList.add("hide");
+        setTimeout(() => productsSearch.classList.add("hide"), 100)
     };
+}
+
+// Copy Search
+function copySearchMobile() {
+    const searchMobile = $(".search-mobile");
+    const search = $(".search");
+
+    const copySearch = search.innerHTML;
+    searchMobile.innerHTML = copySearch;
+
+    handleInputSearch();
 }
 
 // Copy menu for navbar Mobile
@@ -144,9 +239,15 @@ function handleslider() {
 }
 
 function start() {
-    getProducts(renderProducts);
+    renderProducts(products);
 
-    handleInputSlider();
+    toggleNavList();
+
+    toggleMenuMobile();
+
+    handleInputSearch();
+
+    copySearchMobile();
 
     copyMenuNavbar();
 
