@@ -5,25 +5,25 @@ const $$ = document.querySelectorAll.bind(document);
 const products = [
     {
         id: 1,
-        title: "In ảnh tràn viền",
+        title: "In ảnh tràn viền đầy đủ các size không ép và có ép plastic",
         price: "600đ - 24.000đ",
         image: "./assets/images/anh-tran-vien.jpg",
     },
     {
         id: 2,
-        title: "In ảnh mini viền trắng",
+        title: "In ảnh mini viền trắng  đầy đủ các size không ép và có ép plastic",
         price: "600đ - 24.000đ",
         image: "./assets/images/anh-tran-vien.jpg",
     },
     {
         id: 3,
-        title: "In ảnh viền trắng",
+        title: "In ảnh viền trắng  đầy đủ các size không ép và có ép plastic",
         price: "600đ - 24.000đ",
         image: "./assets/images/anh-tran-vien.jpg",
     },
     {
         id: 4,
-        title: "In ảnh instagram",
+        title: "In ảnh instagram  đầy đủ các size không ép và có ép plastic",
         price: "600đ - 24.000đ",
         image: "./assets/images/anh-tran-vien.jpg",
     },
@@ -41,13 +41,25 @@ const products = [
     },
     {
         id: 7,
-        title: "Album",
+        title: "Đèn nháy",
         price: "600đ - 24.000đ",
         image: "./assets/images/anh-tran-vien.jpg",
     },
     {
         id: 8,
-        title: "Khung ảnh",
+        title: "Lưới sắt",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 9,
+        title: "Album 6x9(65 ảnh),…",
+        price: "600đ - 24.000đ",
+        image: "./assets/images/anh-tran-vien.jpg",
+    },
+    {
+        id: 10,
+        title: "Set khung ảnh 3D làm quà tặng, quà lưu niệm",
         price: "600đ - 24.000đ",
         image: "./assets/images/anh-tran-vien.jpg",
     },

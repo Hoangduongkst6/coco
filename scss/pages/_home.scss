@@ -6,7 +6,7 @@
     @include abstracts.screen(md) {
         margin-top: 24px;
     }
-    
+
     &-body {
         display: flex;
     }
@@ -79,7 +79,6 @@
 }
 
 .service {
-
     &-list {
         display: flex;
         align-items: center;
@@ -126,6 +125,172 @@
             margin: auto;
             filter: brightness(0) saturate(100%) invert(35%) sepia(0%) saturate(1067%) hue-rotate(257deg)
                 brightness(102%) contrast(87%);
+        }
+    }
+}
+
+.favorite {
+    padding: 30px 0;
+
+    h2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e5e8ec;
+    }
+
+    &-list {
+        margin-top: 32px;
+    }
+
+    &-trending {
+        padding: 18px;
+        border-radius: 4px;
+        border: 1px solid var(--text-color);
+
+        @include abstracts.screen(xl) {
+            margin-bottom: 32px;
+        }
+
+        &-active {
+            row-gap: 30px;
+
+            @include abstracts.screen(md) {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 0;
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+        }
+
+        &.favorite-trending-row {
+            height: calc(var(--favorite-trending-height) / 2 - 30px);
+            background-color: #eee;
+            padding: 24px;
+            border: 0;
+            display: flex;
+            gap: 24px;
+
+            @include abstracts.screen(xl) {
+                margin-bottom: 0;
+            }
+
+            a {
+                > img {
+                    width: 124px;
+                    height: 100%;
+                }
+            }
+
+            .favorite-trending-body {
+                margin: 0;
+
+                h3 {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .favorite-trending-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 20px;
+            }
+        }
+
+        a {
+            position: relative;
+
+            &:hover .favorite-trending-box {
+                opacity: 1;
+                translate: 0;
+            }
+
+            > img {
+                width: 100%;
+                height: 249px;
+                display: block;
+            }
+
+            &-body {
+                margin: 0;
+            }
+        }
+
+        &-box {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            border-radius: 50%;
+            opacity: 0.5;
+            background-color: #fff;
+            position: absolute;
+            transition: all 0.3s;
+            transition-delay: var(--delay);
+            
+            &:nth-last-of-type(1) {
+                top: 8px;
+                right: 8px;
+            }
+            
+            &:nth-last-of-type(2) {
+                top: 44px;
+                right: 8px;
+                translate: 100%;
+                opacity: 0;
+            }
+
+            > img {
+                margin: auto;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-body {
+            margin-top: 16px;
+
+            h3 {
+                overflow: hidden;
+                font-weight: 500;
+                line-height: 1.4;
+
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+
+            > span {
+                display: block;
+                padding-top: 14px;
+                color: var(--primary-highlight-color);
+            }
+        }
+
+        &-inner {
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            > span {
+                color: #0000008a;
+                font-size: 1.3rem;
+            }
+        }
+
+        &-stars {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 14px;
+                height: 14px;
+                margin: 0 2px;
+                filter: brightness(0) saturate(100%) invert(94%) sepia(59%) saturate(3569%) hue-rotate(322deg)
+                    brightness(101%) contrast(101%);
+                cursor: pointer;
+            }
         }
     }
 }

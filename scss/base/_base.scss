@@ -19,6 +19,8 @@
 
     --swiper-theme-color: #666 !important;
     --swiper-navigation-size: 20px !important;
+
+    --favorite-trending-height: 433px; 
 }
 
 *,
@@ -40,7 +42,7 @@ body {
     background-color: #fffffe;
     color: var(--text-color);
     font-size: 1.6rem;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -77,5 +79,6 @@ select {
 }
 
 .heading-medium {
-
+    font-size: 1.8rem;
+    font-weight: 700;
 }
