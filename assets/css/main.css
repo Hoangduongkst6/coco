@@ -1605,6 +1605,11 @@ select {
 .hero {
   margin-top: 32px;
 }
+@media (max-width: 767.98px) {
+  .hero {
+    margin-top: 24px;
+  }
+}
 .hero-body {
   display: flex;
 }
@@ -1647,10 +1652,23 @@ select {
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
   display: none;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.4);
+  --swiper-navigation-size: 18px !important;
+}
+
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0 !important;
+}
+
+@media (max-width: 767.98px) {
+  .swiper-pagination-bullet {
+    width: 4px !important;
+    height: 4px !important;
+    margin: 2px !important;
+  }
 }
 
 .service-list {
