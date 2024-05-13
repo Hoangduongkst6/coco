@@ -66,15 +66,14 @@
     bottom: 4px !important;
 
     @include abstracts.screen(md) {
-        bottom: 0px !important;
+        bottom: 1px !important;
     }
 }
 
 .swiper-pagination-bullet {
     @include abstracts.screen(md) {
-        width: 4px !important;
-        height: 4px !important;
-        margin: 2px !important;
+        width: 6px !important;
+        height: 6px !important;
     }
 }
 

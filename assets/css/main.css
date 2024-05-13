@@ -982,7 +982,6 @@ table {
 :root {
   --primary-highlight-color: #ff8ba7;
   --primary-color: #ffb3b5;
-  --heading-color: #33272a;
   --text-color: #232124;
   --top-bar-height: 34px;
   --logo-size: 50px;
@@ -1680,15 +1679,14 @@ select {
 }
 @media (max-width: 767.98px) {
   .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 0px !important;
+    bottom: 1px !important;
   }
 }
 
 @media (max-width: 767.98px) {
   .swiper-pagination-bullet {
-    width: 4px !important;
-    height: 4px !important;
-    margin: 2px !important;
+    width: 6px !important;
+    height: 6px !important;
   }
 }
 
