@@ -1514,6 +1514,112 @@ select {
   display: none;
 }
 
+.footer {
+  background-color: #fbfbfb;
+  padding-top: 40px;
+}
+.footer-logo span {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+.footer-list {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+@media (max-width: 991.98px) {
+  .footer-list {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer-list {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-item {
+  flex-shrink: 0;
+}
+.footer-item:nth-child(1) p {
+  margin-top: 30px;
+  line-height: 1.4;
+  font-size: 1.4rem;
+}
+.footer-item h3 {
+  font-weight: 500;
+}
+.footer-item ul {
+  margin-top: 18px;
+}
+.footer-item li > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 1.4rem;
+  width: 100%;
+  transition: color 0.15s;
+}
+.footer-item li > a img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(20%) hue-rotate(322deg) brightness(91%) contrast(106%);
+}
+.footer-item li > a:hover {
+  color: var(--primary-highlight-color);
+}
+.footer-item li > p {
+  padding: 8px 0;
+}
+.footer-label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+.footer-text {
+  margin-top: 24px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  display: block;
+}
+.footer-form {
+  margin-top: 16px;
+  display: flex;
+  column-gap: 10px;
+}
+.footer-form input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #d2d1d6;
+  font-size: 1.4rem;
+}
+.footer-form button {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+  background-color: var(--primary-highlight-color);
+}
+.footer-form button:hover {
+  opacity: 0.9;
+}
+.footer-end {
+  border-top: 1px solid #e5e8ec;
+}
+.footer-end span {
+  display: block;
+  padding: 17px 0;
+  text-align: center;
+}
+
 .menu-mobile-topbar ul, .menu-mobile-navbar ul {
   font-size: 1.4rem;
   font-weight: 400;
@@ -1759,7 +1865,7 @@ select {
 }
 
 .product {
-  padding-bottom: 32px;
+  padding-bottom: 40px;
 }
 .product-top {
   display: flex;
