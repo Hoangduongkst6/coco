@@ -250,6 +250,15 @@ function handleslider() {
     };
 }
 
+function productMinMobile() {
+    const favoriteNone = $(".favorite-none");
+
+    const width = window.outerWidth;
+    if (width < 768) {
+        favoriteNone.style.display = "none"
+    }
+}
+
 function start() {
     renderProducts(products);
 
@@ -266,6 +275,8 @@ function start() {
     copyMenuHero();
 
     handleslider();
+
+    productMinMobile();
 }
 
 start();
