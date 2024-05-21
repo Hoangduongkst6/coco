@@ -130,3 +130,14 @@
         }
     }
 }
+
+.search-mobile {
+    width: 60%;
+    height: 40px;
+    justify-content: center;
+    position: relative;
+
+    @include abstracts.screen(md) {
+        width: 100%;
+    }
+}

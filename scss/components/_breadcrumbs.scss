@@ -1,0 +1,44 @@
+@use "../abstracts";
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    background-color: #fbfbfb;
+    border-radius: 8px;
+    padding: 16px;
+    gap: 16px;
+
+    @include abstracts.screen(lg) {
+        padding: 12px 14px;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        a {
+            color: #9e9da8;
+            font-size: 1.5rem;
+
+            @include abstracts.screen(lg) {
+                font-size: 1.4rem;
+            }
+
+            &.active {
+                color: #000;
+            }
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+
+            @include abstracts.screen(md) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

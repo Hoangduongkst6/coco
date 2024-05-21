@@ -170,7 +170,7 @@ function handleInputSearch() {
         productsSearch.classList.remove("hide");
     };
     searchInput.onblur = function () {
-        setTimeout(() => productsSearch.classList.add("hide"), 200)
+        setTimeout(() => productsSearch.classList.add("hide"), 200);
     };
 }
 
@@ -255,7 +255,7 @@ function productMinMobile() {
 
     const width = window.outerWidth;
     if (width < 768) {
-        favoriteNone.style.display = "none"
+        favoriteNone.style.display = "none";
     }
 }
 

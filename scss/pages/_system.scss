@@ -1,0 +1,84 @@
+.system {
+    margin-top: 32px;
+    margin-bottom: 50px;
+
+    &-list {
+        margin-top: 32px;
+    }
+
+    &-item {
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            height: 100%;
+            position: relative;
+
+            &:hover .system-item-overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &-overlay {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        &-action {
+            padding: 6px 16px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+
+            span {
+                color: #1a73e8;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &-info {
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 6px;
+                padding: 8px 0;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                }
+
+                span {
+                    flex-shrink: 0;
+                    font-size: 1.4rem;
+                }
+
+                a {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+.hotline {
+    color: var(--primary-highlight-color);
+}
