@@ -79,3 +79,34 @@ select {
     outline: none;
     border: none;
 }
+
+.btn {
+    width: 170px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 4px;
+    background-color: var(--primary-highlight-color);
+    color: #232124;
+    cursor: pointer;
+    font-size: 1.5rem;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    @include abstracts.screen(md) {
+        width: 150px;
+        font-size: 1.4rem;
+    }
+}
+
+.heading-large {
+    margin: 40px 0;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include abstracts.screen(md) {
+        font-size: 3.2rem;
+    }
+}

@@ -189,60 +189,53 @@
 
     <!-- Main -->
     <main>
-        <!-- System -->
-        <section class="system">
+        <!-- Support -->
+        <section class="support">
             <div class="container">
-                <h1 class="heading-large">Hệ thống của COCO</h1>
                 <ul class="breadcrumbs">
                     <li>
-                        <a href="#!">Trang chủ</a>
+                        <a href="/">Trang chủ</a>
                         <img src="./assets/icons/system/arrow.svg" alt="">
                     </li>
                     <li>
-                        <a class="active" href="#!">Hệ thống</a>
+                        <a class="active" href="">Hỗ trợ</a>
                     </li>
                 </ul>
 
-                <div class="system-list">
-                    <div class="row gy-lg-3">
-                        <div class="col-6 col-lg-12">
-                            <section class="system-item">
-                                <h2>Bản đồ</h2>
-                                <a target="_blank"
-                                    href="https://www.google.com/maps/dir/18.5675176,105.8407726/16.4583314,107.5987501/@17.2797971,106.8548052,8.78z/data=!4m4!4m3!1m1!4e1!1m0?entry=ttu">
-                                    <img src="./assets/images/map.png" alt="">
+                <h1 class="heading-large">Xin chào, COCO có thể giúp gì cho bạn?</h1>
+                <form action="" method="POST" class="support-form" id="support-form">
 
-                                    <div class="system-item-overlay"></div>
-                                    <div class="system-item-action">
-                                        <span>Xem bản đồ lớn hơn</span>
-                                    </div>
-                                </a>
-                            </section>
-                        </div>
-                        <div class="col-6 col-lg-12">
-                            <section class="system-item">
-                                <h2>Hệ thống cửa hàng</h2>
-                                <ul class="system-item-info">
-                                    <li>
-                                        <img src="./assets/icons/system/info.svg" alt="">
-                                        <span>Địa chỉ: </span>
-                                        <a href="">7/187 Phan Đình Phùng, Tỉnh Thừa Thiên Huế, Vietnam</a>
-                                    </li>
-                                    <li>
-                                        <img src="./assets/icons/system/user.svg" alt="">
-                                        <span>Giờ hoạt động: </span>
-                                        <a href="">hoạt động 24/7</a>
-                                    </li>
-                                    <li>
-                                        <img src="./assets/icons/system/phone.svg" alt="">
-                                        <span>Hotline: </span>
-                                        <a class="hotline" href="tel:096 671 17 64">096 671 17 64</a>
-                                    </li>
-                                </ul>
-                            </section>
-                        </div>
+                    <div class="form-group support-group">
+                        <input id="firstname" name="firstname" type="text" placeholder="Họ của bạn"
+                            class="form-control">
+                        <span class="form-message support-error"></span>
                     </div>
-                </div>
+
+                    <div class="form-group support-group">
+                        <input id="lastname" name="lastname" type="text" placeholder="Tên của bạn" class="form-control">
+                        <span class="form-message support-error"></span>
+                    </div>
+
+                    <div class="form-group support-group">
+                        <input id="email" name="email" type="text" placeholder="Địa chỉ Email của bạn"
+                            class="form-control">
+                        <span class="form-message support-error"></span>
+                    </div>
+
+                    <div class="form-group support-group">
+                        <input id="number" name="number" type="number" placeholder="Số điện thoại của bạn"
+                            class="form-control">
+                        <span class="form-message support-error"></span>
+                    </div>
+
+                    <div class="form-group support-message">
+                        <textarea id="message" name="message" type="text" placeholder="Câu hỏi bạn muốn COCO giải đáp"
+                            class="form-control"></textarea>
+                        <span class="form-message support-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn support-btn">Gửi câu hỏi</button>
+                </form>
             </div>
         </section>
     </main>
@@ -346,6 +339,27 @@
 
     <!-- Scripts -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/validator.js"></script>
+    <script>
+
+        Validator({
+            form: "#support-form",
+            formGroupSelector: ".form-group",
+            errSelector: ".form-message",
+            rules: [
+                Validator.isRequired("#firstname"),
+                Validator.isRequired("#lastname"),
+                Validator.isRequired("#email"),
+                Validator.isEmail("#email"),
+                Validator.isRequired("#number"),
+                Validator.isRequired("#message"),
+            ],
+            onSubmit: function (data) {
+                console.log(data);
+            }
+        })
+
+    </script>
 
 </body>
 
