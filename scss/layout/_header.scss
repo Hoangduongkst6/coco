@@ -22,13 +22,13 @@
     &-list {
         @extend %df-align-on;
 
-        li {
+        > li {
             position: relative;
             padding: 0 8px;
             cursor: pointer;
             gap: 6px;
             font-size: 1.3rem;
-            transition: all .2s;
+            transition: all 0.2s;
 
             &:first-child {
                 padding-left: 0;
@@ -36,12 +36,19 @@
 
             &:last-child {
                 padding-right: 0;
+                position: relative;
             }
 
             @extend %df-align-on;
 
             &:hover {
                 color: var(--primary-highlight-color);
+            }
+
+            &:hover .top-bar-subnav {
+                opacity: 1;
+                visibility: visible;
+                color: var(--text-color);
             }
 
             img {
@@ -62,6 +69,23 @@
                     right: 0;
                 }
             }
+        }
+    }
+
+    &-subnav {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        left: 8px;
+        padding-top: 6px;
+        transition: all 0.3s;
+
+        a {
+            display: block;
+            width: 163px;
+            background-color: var(--primary-highlight-color);
+            padding: 14px 16px;
         }
     }
 }
@@ -209,7 +233,7 @@
             cursor: pointer;
             gap: 12px;
             background-color: #ffdebd;
-            transition: all .3s;
+            transition: all 0.3s;
 
             &:hover {
                 box-shadow: 0 3px 15px -10px rgba(31, 18, 53, 0.6);
