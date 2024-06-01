@@ -36,7 +36,6 @@
 
             &:last-child {
                 padding-right: 0;
-                position: relative;
             }
 
             @extend %df-align-on;
@@ -49,6 +48,14 @@
                 opacity: 1;
                 visibility: visible;
                 color: var(--text-color);
+                transform: translateY(0);
+            }
+
+            &:hover .top-bar-notify {
+                opacity: 1;
+                visibility: visible;
+                color: var(--text-color);
+                transform: translateY(0);
             }
 
             img {
@@ -78,14 +85,100 @@
         position: absolute;
         top: 100%;
         left: 8px;
-        padding-top: 6px;
+        padding-top: 8px;
         transition: all 0.3s;
+        transform: translateY(-8px);
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+
+        @include abstracts.screen(lg) {
+            display: none;
+        }
 
         a {
-            display: block;
             width: 163px;
+            display: block;
+            border-radius: 2px;
             background-color: var(--primary-highlight-color);
             padding: 14px 16px;
+        }
+    }
+
+    &-notify {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding-top: 8px;
+        z-index: 1;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        transform: translateY(-8px);
+        z-index: 999;
+
+        @include abstracts.screen(lg) {
+            display: none;
+        }
+
+        &-inner {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 2px;
+
+            header {
+                line-height: 40px;
+                color: #999;
+                font-size: 1.4rem;
+                margin-left: 12px;
+            }
+
+            ul {
+                li {
+                    font-size: 1.4rem;
+
+                    &.active {
+                        background-color: rgba(238, 77, 45, 0.08);
+                    }
+
+                    &:hover {
+                        background-color: #f8f8f8;
+                    }
+                }
+
+                a {
+                    display: flex;
+                    padding: 12px;
+                    text-decoration: none;
+
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        object-fit: contain;
+                        margin-right: 6px;
+                    }
+                }
+            }
+
+            footer {
+                padding: 8px 0;
+                width: 100%;
+                font-size: 1.4rem;
+                text-align: center;
+            }
+        }
+
+        &-content {
+            span {
+                display: block;
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                display: block;
+                color: #756f6e;
+                margin-top: 4px;
+            }
         }
     }
 }

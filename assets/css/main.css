@@ -1075,7 +1075,7 @@ select {
 }
 
 .heading-large {
-  margin: 40px 0;
+  margin: 40px 0 32px;
   font-size: 3.8rem;
   font-weight: 700;
   line-height: 1.4;
@@ -1213,7 +1213,6 @@ select {
 }
 .top-bar-list > li:last-child {
   padding-right: 0;
-  position: relative;
 }
 .top-bar-list > li:hover {
   color: var(--primary-highlight-color);
@@ -1222,6 +1221,13 @@ select {
   opacity: 1;
   visibility: visible;
   color: var(--text-color);
+  transform: translateY(0);
+}
+.top-bar-list > li:hover .top-bar-notify {
+  opacity: 1;
+  visibility: visible;
+  color: var(--text-color);
+  transform: translateY(0);
 }
 .top-bar-list > li img {
   width: 16px;
@@ -1245,14 +1251,87 @@ select {
   position: absolute;
   top: 100%;
   left: 8px;
-  padding-top: 6px;
+  padding-top: 8px;
   transition: all 0.3s;
+  transform: translateY(-8px);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+@media (max-width: 991.98px) {
+  .top-bar-subnav {
+    display: none;
+  }
 }
 .top-bar-subnav a {
-  display: block;
   width: 163px;
+  display: block;
+  border-radius: 2px;
   background-color: var(--primary-highlight-color);
   padding: 14px 16px;
+}
+.top-bar-notify {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 8px;
+  z-index: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  transform: translateY(-8px);
+  z-index: 999;
+}
+@media (max-width: 991.98px) {
+  .top-bar-notify {
+    display: none;
+  }
+}
+.top-bar-notify-inner {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.top-bar-notify-inner header {
+  line-height: 40px;
+  color: #999;
+  font-size: 1.4rem;
+  margin-left: 12px;
+}
+.top-bar-notify-inner ul li {
+  font-size: 1.4rem;
+}
+.top-bar-notify-inner ul li.active {
+  background-color: rgba(238, 77, 45, 0.08);
+}
+.top-bar-notify-inner ul li:hover {
+  background-color: #f8f8f8;
+}
+.top-bar-notify-inner ul a {
+  display: flex;
+  padding: 12px;
+  text-decoration: none;
+}
+.top-bar-notify-inner ul a img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-right: 6px;
+}
+.top-bar-notify-inner footer {
+  padding: 8px 0;
+  width: 100%;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.top-bar-notify-content span {
+  display: block;
+  font-size: 1.4rem;
+}
+.top-bar-notify-content p {
+  font-size: 1.2rem;
+  display: block;
+  color: #756f6e;
+  margin-top: 4px;
 }
 
 .menu {
@@ -2368,6 +2447,12 @@ select {
   display: block;
   margin-top: 8px;
   color: #f33a58;
+}
+
+.sign-up {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=main.css.map */
