@@ -108,11 +108,11 @@
                             </div>
                         </div>
                     </li>
-                    <li class="gap">
-                        <a href="./sign-up.html">Đăng ký</a>
+                    <li class="login gap">
+                        <button>Đăng nhập</button>
                     </li>
-                    <li>
-                        <a href="#!">Đăng nhập</a>
+                    <li class="signup">
+                        <button>Đăng ký</button>
                     </li>
                 </ul>
             </nav>
@@ -921,8 +921,160 @@
         </div>
     </footer>
 
+    <!-- Wrapper -->
+    <div class="wrapper">
+
+        <div class="wrapper-overlay"></div>
+
+        <div class="wrapper-inner">
+            <button class="wrapper-inner-close">
+                <img src="./assets/icons/form/close.svg" alt="">
+            </button>
+
+            <div class="wrapper-content login">
+                <h2>Đăng nhập</h2>
+                <form action="" method="" class="form" id="form-1">
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <input id="number" name="number" type="text" class="form-control">
+                            <label for="number" class="form-label">Số điện thoại</label>
+                            <img src="./assets/icons/form/user.svg" alt="">
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <input id="password" name="password" type="password" class="form-control">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <img src="./assets/icons/form/lock.svg" alt="">
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-forgot">
+                        <div class="form-forgot-wrap">
+                            <input type="checkbox" name="" id="form-checkbox">
+                            <label for="form-checkbox">Đặt làm mặc định</label>
+                        </div>
+
+                        <a href="#!" class="form-help">Quên mật khẩu?</a>
+                    </div>
+
+                    <button class="form-submit">Đăng nhập</button>
+
+                    <div class="form-gap">
+                        <div class="form-line"></div>
+                        <span>HOẶC</span>
+                    </div>
+
+                    <div class="form-other">
+                        <button>
+                            <img src="./assets/icons/form/facebook.svg" alt="facebook">
+                            Facebook
+                        </button>
+                        <button>
+                            <img src="./assets/icons/form/google.svg" alt="google">
+                            Google
+                        </button>
+                    </div>
+
+                    <div class="form-link">
+                        Bạn đã có tài khoản?
+                        <a href="#!" class="login">Đăng ký</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="wrapper-content signup">
+                <h2>Đăng ký</h2>
+                <form action="" method="" class="form" id="form-2">
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <input id="number" name="number" type="text" class="form-control">
+                            <label for="number" class="form-label">Số điện thoại</label>
+                            <img src="./assets/icons/form/user.svg" alt="">
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <input id="password" name="password" type="password" class="form-control">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <img src="./assets/icons/form/lock.svg" alt="">
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group-inner">
+                            <input id="password_confirmation" name="password_confirmation" type="password"
+                                class="form-control">
+                            <label for="password_confirmation" class="form-label">Xác nhận mật khẩu</label>
+                            <img src="./assets/icons/form/lock.svg" alt="">
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-forgot">
+                        <div class="form-forgot-wrap">
+                            <input type="checkbox" name="" id="form-checkbox">
+                            <label for="form-checkbox">Đặt làm mặc định</label>
+                        </div>
+                    </div>
+
+                    <button class="form-submit">Đăng nhập</button>
+
+                    <div class="form-gap">
+                        <div class="form-line"></div>
+                        <span>HOẶC</span>
+                    </div>
+
+                    <div class="form-other">
+                        <button>
+                            <img src="./assets/icons/form/facebook.svg" alt="facebook">
+                            Facebook
+                        </button>
+                        <button>
+                            <img src="./assets/icons/form/google.svg" alt="google">
+                            Google
+                        </button>
+                    </div>
+
+                    <div class="form-link">
+                        Bạn đã có tài khoản?
+                        <a href="#!" class="signup">Đăng nhập </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
     <!-- Scripts -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/validator.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            form: '#form-2',
+            formGroupSelector: '.form-group',
+            errSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#number', 'Vui lòng nhập số điện thoại của bạn'),
+                Validator.minLength('#number', 10),
+                Validator.minLength('#password', 6),
+                Validator.isRequired('#password_confirmation'),
+                Validator.isConfirmed('#password_confirmation', function () {
+                    return document.querySelector('#form #password').value;
+                }, 'Mật khẩu nhập lại không chính xác ')
+            ],
+            onSubmit: function (data) {
+                console.log(data);
+            }
+        });
+    </script>
 
 </body>
 

@@ -1,6 +1,6 @@
 @use "../abstracts";
 
-%nav-mobile-ul {
+%nav-mobile-list {
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 20px;
@@ -9,7 +9,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.079);
 }
 
-%nav-mobile-a {
+%nav-mobile-item {
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
     cursor: pointer;
@@ -19,6 +19,7 @@
     padding: 14px 0 16px 20px;
     transition: 0.3s;
     width: 100%;
+    text-align: start;
 
     &:hover {
         background-color: #fafafa;
@@ -92,14 +93,18 @@
             flex-direction: column;
             align-items: flex-start;
 
-            @extend %nav-mobile-ul;
+            @extend %nav-mobile-list;
 
             li {
                 width: 100%;
             }
 
             a {
-                @extend %nav-mobile-a;
+                @extend %nav-mobile-item;
+            }
+
+            button {
+                @extend %nav-mobile-item;
             }
         }
     }
@@ -107,9 +112,12 @@
     &-topbar {
         ul {
             flex-direction: column;
-            align-items: flex-start;
 
-            @extend %nav-mobile-ul;
+            @extend %nav-mobile-list;
+
+            &:last-child {
+                border-bottom: none;
+            }
 
             li {
                 width: 100%;
@@ -121,11 +129,15 @@
             }
 
             a {
-                @extend %nav-mobile-a;
+                @extend %nav-mobile-item;
 
                 &:hover {
                     color: var(--primary-dark-color);
                 }
+            }
+
+            button {
+                @extend %nav-mobile-item;
             }
         }
     }

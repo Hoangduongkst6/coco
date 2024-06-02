@@ -59,6 +59,8 @@ img {
 button {
     border: none;
     outline: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 input,
@@ -99,7 +101,6 @@ select {
 }
 
 .heading-large {
-    margin: 40px 0 32px;
     font-size: 3.8rem;
     font-weight: 700;
     line-height: 1.4;

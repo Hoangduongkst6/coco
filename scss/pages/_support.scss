@@ -6,6 +6,7 @@
 
     h1 {
         width: 400px;
+        margin: 40px 0 32px;
 
         @include abstracts.screen(md) {
             width: 100%;

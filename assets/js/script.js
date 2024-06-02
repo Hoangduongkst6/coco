@@ -259,6 +259,51 @@ function productMinMobile() {
     }
 }
 
+function hendleForm() {
+    const wrapperInner = $(".wrapper-inner");
+    const formSign = $(".form-link .signup");
+    const formLogin = $(".form-link .login");
+    const btnLogin = $(".login");
+    const btnSignup = $(".signup");
+    const close = $(".wrapper-inner-close");
+    const overlay = $(".wrapper-overlay");
+
+    formSign.addEventListener("click", () => {
+        wrapperInner.classList.toggle("active");
+    });
+
+    formLogin.addEventListener("click", () => {
+        wrapperInner.classList.toggle("active");
+    });
+
+    btnLogin.addEventListener("click", () => {
+        if (wrapperInner) {
+            wrapperInner.classList.add("active-popup");
+            overlay.classList.add("show");
+        }
+    });
+
+    btnSignup.addEventListener("click", () => {
+        wrapperInner.classList.add("active");
+        if ($(".wrapper-inner.active")) {
+            wrapperInner.classList.add("active-popup");
+            overlay.classList.add("show");
+        }
+    });
+
+    close.addEventListener("click", () => {
+        wrapperInner.classList.remove("active-popup");
+        wrapperInner.classList.remove("active");
+        overlay.classList.remove("show");
+    });
+
+    overlay.addEventListener("click", () => {
+        overlay.classList.remove("show");
+        wrapperInner.classList.remove("active-popup");
+        wrapperInner.classList.remove("active");
+    });
+}
+
 function start() {
     renderProducts(products);
 
@@ -277,6 +322,8 @@ function start() {
     handleslider();
 
     productMinMobile();
+
+    hendleForm();
 }
 
 start();
